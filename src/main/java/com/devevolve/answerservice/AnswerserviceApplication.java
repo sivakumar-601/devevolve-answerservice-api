@@ -1,0 +1,13 @@
+package com.devevolve.answerservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AnswerserviceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AnswerserviceApplication.class, args);
+	}
+
+}
