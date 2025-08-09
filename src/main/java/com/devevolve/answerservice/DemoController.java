@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping("/welcome")
-    public ResponseEntity<String> getAnonymous() {
-    	System.out.println("---<entered to getAnonymous site name>----");
-        return ResponseEntity.ok("Welcome to DevEvolve");
+    public ResponseEntity<String> getWelcomeNote() {
+        return ResponseEntity.ok("Welcome to DevEvolve..dev tools");
     }
 
 }
