@@ -1,0 +1,39 @@
+# App Info (used for registration in Eureka)
+spring:
+  application:
+    name: answerservice
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23li3tIo8Piohmbwzt
+            client-secret: ed6492da5f8ddb9a72b81eb7ce39cdcc9399562f
+            scope: read:user, user:email
+            redirect-uri: "http://localhost:8081/login/oauth2/code/github"  # we don't need to create this endpoing , spring will does
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+
+server:
+  port: 8081
+
+# Enable Eureka Client
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    hostname: localhost
+
+#logging:
+#  level:
+#    com.devevolve.answerservice : DEBUG
+
